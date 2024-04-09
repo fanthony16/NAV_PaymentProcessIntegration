@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="H2HIntegration_BankList_BeneficiaryBankList_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://nav_app.leadway-pensure.com:8047/LPPFA/WS/PENSURE%20SHAREHOLDERS%20FUNDS/Page/BeneficiaryBankList</Value>
+    </Setting>
+    <Setting Name="H2HIntegration_PaymentVoucherCard_PaymentVoucherCard_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://nav_app.leadway-pensure.com:8047/LPPFA/WS/PENSURE%20SHAREHOLDERS%20FUNDS/Page/PaymentVoucherCard</Value>
+    </Setting>
+    <Setting Name="H2HIntegration_PaymentVoucher_PaymentVoucherList_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://nav_app.leadway-pensure.com:8047/LPPFA/WS/PENSURE%20SHAREHOLDERS%20FUNDS/Page/PaymentVoucherList</Value>
+    </Setting>
+    <Setting Name="H2HIntegration_PaymentLine_PaymentLines_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://nav_app.leadway-pensure.com:8047/LPPFA/WS/PENSURE%20SHAREHOLDERS%20FUNDS/Page/PaymentLines</Value>
+    </Setting>
+    <Setting Name="H2HIntegration_BankCard_BankCard_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://nav_app.leadway-pensure.com:8047/LPPFA/WS/PENSURE%20SHAREHOLDERS%20FUNDS/Page/BankCard</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

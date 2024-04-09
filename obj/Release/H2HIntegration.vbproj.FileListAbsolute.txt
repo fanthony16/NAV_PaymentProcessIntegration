@@ -1,0 +1,17 @@
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\bin\Release\H2HIntegration.exe.config
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\bin\Release\H2HIntegration.exe
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\bin\Release\H2HIntegration.XmlSerializers.dll
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\bin\Release\H2HIntegration.pdb
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\bin\Release\H2HIntegration.xml
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\bin\Release\Logger.dll
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\bin\Release\Logger.pdb
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\bin\Release\Logger.xml
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\obj\Release\H2HIntegration.Form1.resources
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\obj\Release\H2HIntegration.Resources.resources
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\obj\Release\H2HIntegration.vbproj.GenerateResource.Cache
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\obj\Release\H2HIntegration.exe
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\obj\Release\H2HIntegration.xml
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\obj\Release\H2HIntegration.pdb
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\obj\Release\H2HIntegration.XmlSerializers.dll
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\bin\Release\PaymentModuleDMSWindow.dll
+C:\GeneralProject\H2HNavision\H2HIntegration\H2HIntegration\bin\Release\PaymentModuleDMSWindow.pdb

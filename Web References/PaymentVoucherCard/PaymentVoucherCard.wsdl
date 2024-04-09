@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:tns="urn:microsoft-dynamics-schemas/page/paymentvouchercard" targetNamespace="urn:microsoft-dynamics-schemas/page/paymentvouchercard" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="urn:microsoft-dynamics-schemas/page/paymentvouchercard" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <xsd:simpleType name="Pay_Mode">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="_blank_" />
+          <xsd:enumeration value="Cash" />
+          <xsd:enumeration value="Cheque" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="Cheque_Type">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="_blank_" />
+          <xsd:enumeration value="Computer_Check" />
+          <xsd:enumeration value="Manual_Check" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="Status">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Pending" />
+          <xsd:enumeration value="_x0031_st_Approval" />
+          <xsd:enumeration value="_x0032_nd_Approval" />
+          <xsd:enumeration value="Cheque_Printing" />
+          <xsd:enumeration value="Posted" />
+          <xsd:enumeration value="Cancelled" />
+          <xsd:enumeration value="Checking" />
+          <xsd:enumeration value="Rejected" />
+          <xsd:enumeration value="Pending_Approval" />
+          <xsd:enumeration value="Approved" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="H2H_Status">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="_blank_" />
+          <xsd:enumeration value="Dispatched" />
+          <xsd:enumeration value="Successful" />
+          <xsd:enumeration value="Failed" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="Payee_Account_Type">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="Customer" />
+          <xsd:enumeration value="Vendor" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="Apply_to_Account_Type">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="_blank_" />
+          <xsd:enumeration value="Customer" />
+          <xsd:enumeration value="Vendor" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="Applies_to_Doc_Type">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="_blank_" />
+          <xsd:enumeration value="Payment" />
+          <xsd:enumeration value="Invoice" />
+          <xsd:enumeration value="Credit_Memo" />
+          <xsd:enumeration value="Finance_Charge_Memo" />
+          <xsd:enumeration value="Reminder" />
+          <xsd:enumeration value="Refund" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:simpleType name="H2H_Status_56023">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="_blank_" />
+          <xsd:enumeration value="Dispatched" />
+          <xsd:enumeration value="Successful" />
+          <xsd:enumeration value="Failed" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="Payment_Lines">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Type" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Account_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Account_Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Payment_Narration" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Global_Dimension_1_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Shortcut_Dimension_2_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Shortcut_Dimension_3_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Shortcut_Dimension_4_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Advert_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Amount" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Withholding_Tax_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Withholding_Tax_Amount" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Net_Amount" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="VAT_Prod_Posting_Group" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="NetAmount_LCY" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Vendor_Bank_Account" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Payee_Account_Type" type="tns:Payee_Account_Type" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Payee_Account_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Payee_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Payee" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Payee_Bank_Account_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="_x003C_Cheque_No_x003E_" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Bank" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Security_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Payee_Email_Address" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Apply_to_Account_Type" type="tns:Apply_to_Account_Type" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Applies_to_Doc_Type" type="tns:Applies_to_Doc_Type" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Applies_to_Doc_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Applies_to_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Currency_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Transaction_ID" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="PFA" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="PFA_Period" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Num_Alloc_Interest" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Num_Recon_Interest" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="H2H_Status" type="tns:H2H_Status_56023" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Line_No" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Payment_Lines_List">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="Payment_Lines" type="tns:Payment_Lines" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PaymentVoucherCard">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="1" name="Key" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Date" type="xsd:date" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Global_Dimension_1_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Function_Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Shortcut_Dimension_2_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Budget_Center_Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Shortcut_Dimension_3_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Dim3" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Shortcut_Dimension_4_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Dim4" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Pay_Mode" type="tns:Pay_Mode" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Bank_Transfer" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Currency_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Paying_Bank_Account" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Bank_Name" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Payee" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Payee_Account_Number" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="On_Behalf_Of" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Payment_Narration" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Invoice_Currency_Code" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Cheque_Type" type="tns:Cheque_Type" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="LPO_Check" type="xsd:boolean" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Status" type="tns:Status" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Cashier" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Total_Payment_Amount" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Total_VAT_Amount" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Total_Witholding_Tax_Amount" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Total_Retention_Amount" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="_Total_Payment_Amount_Total_Witholding_Tax_Amount__x002B__Total_VAT_Amount__x002B__Total_Retention_Amount" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Total_Payment_Amount_LCY" type="xsd:decimal" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="_x003C_Cheque_Number_x003E_" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Payment_Release_Date" type="xsd:date" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Responsibility_Center" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Payment_Request_No" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="Posted_Bank_Imprest" type="xsd:string" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="H2H_Status" type="tns:H2H_Status" />
+          <xsd:element minOccurs="0" maxOccurs="1" name="PVLines" type="tns:Payment_Lines_List" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PaymentVoucherCard_List">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="unbounded" name="PaymentVoucherCard" type="tns:PaymentVoucherCard" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:simpleType name="PaymentVoucherCard_Fields">
+        <xsd:restriction base="xsd:string">
+          <xsd:enumeration value="No" />
+          <xsd:enumeration value="Date" />
+          <xsd:enumeration value="Global_Dimension_1_Code" />
+          <xsd:enumeration value="Function_Name" />
+          <xsd:enumeration value="Shortcut_Dimension_2_Code" />
+          <xsd:enumeration value="Budget_Center_Name" />
+          <xsd:enumeration value="Shortcut_Dimension_3_Code" />
+          <xsd:enumeration value="Dim3" />
+          <xsd:enumeration value="Shortcut_Dimension_4_Code" />
+          <xsd:enumeration value="Dim4" />
+          <xsd:enumeration value="Pay_Mode" />
+          <xsd:enumeration value="Bank_Transfer" />
+          <xsd:enumeration value="Currency_Code" />
+          <xsd:enumeration value="Paying_Bank_Account" />
+          <xsd:enumeration value="Bank_Name" />
+          <xsd:enumeration value="Payee" />
+          <xsd:enumeration value="Payee_Account_Number" />
+          <xsd:enumeration value="On_Behalf_Of" />
+          <xsd:enumeration value="Payment_Narration" />
+          <xsd:enumeration value="Invoice_Currency_Code" />
+          <xsd:enumeration value="Cheque_Type" />
+          <xsd:enumeration value="LPO_Check" />
+          <xsd:enumeration value="Status" />
+          <xsd:enumeration value="Cashier" />
+          <xsd:enumeration value="Total_Payment_Amount" />
+          <xsd:enumeration value="Total_VAT_Amount" />
+          <xsd:enumeration value="Total_Witholding_Tax_Amount" />
+          <xsd:enumeration value="Total_Retention_Amount" />
+          <xsd:enumeration value="_Total_Payment_Amount_Total_Witholding_Tax_Amount__x002B__Total_VAT_Amount__x002B__Total_Retention_Amount" />
+          <xsd:enumeration value="Total_Payment_Amount_LCY" />
+          <xsd:enumeration value="_x003C_Cheque_Number_x003E_" />
+          <xsd:enumeration value="Payment_Release_Date" />
+          <xsd:enumeration value="Responsibility_Center" />
+          <xsd:enumeration value="Payment_Request_No" />
+          <xsd:enumeration value="Posted_Bank_Imprest" />
+          <xsd:enumeration value="H2H_Status" />
+        </xsd:restriction>
+      </xsd:simpleType>
+      <xsd:complexType name="PaymentVoucherCard_Filter">
+        <xsd:sequence>
+          <xsd:element minOccurs="1" maxOccurs="1" name="Field" type="tns:PaymentVoucherCard_Fields" />
+          <xsd:element minOccurs="1" maxOccurs="1" name="Criteria" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="Read">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="No" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Read_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="PaymentVoucherCard" type="tns:PaymentVoucherCard" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReadByRecId">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="recId" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReadByRecId_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="PaymentVoucherCard" type="tns:PaymentVoucherCard" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReadMultiple">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="unbounded" name="filter" type="tns:PaymentVoucherCard_Filter" />
+            <xsd:element minOccurs="0" maxOccurs="1" name="bookmarkKey" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="setSize" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="ReadMultiple_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="0" maxOccurs="1" name="ReadMultiple_Result" type="tns:PaymentVoucherCard_List" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="IsUpdated">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Key" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="IsUpdated_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="IsUpdated_Result" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetRecIdFromKey">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Key" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetRecIdFromKey_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="GetRecIdFromKey_Result" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Update">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PaymentVoucherCard" type="tns:PaymentVoucherCard" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Update_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PaymentVoucherCard" type="tns:PaymentVoucherCard" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateMultiple">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PaymentVoucherCard_List" type="tns:PaymentVoucherCard_List" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="UpdateMultiple_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PaymentVoucherCard_List" type="tns:PaymentVoucherCard_List" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_PVLines">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="PVLines_Key" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="Delete_PVLines_Result">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Delete_PVLines_Result" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="Read">
+    <part name="parameters" element="tns:Read" />
+  </message>
+  <message name="Read_Result">
+    <part name="parameters" element="tns:Read_Result" />
+  </message>
+  <message name="ReadByRecId">
+    <part name="parameters" element="tns:ReadByRecId" />
+  </message>
+  <message name="ReadByRecId_Result">
+    <part name="parameters" element="tns:ReadByRecId_Result" />
+  </message>
+  <message name="ReadMultiple">
+    <part name="parameters" element="tns:ReadMultiple" />
+  </message>
+  <message name="ReadMultiple_Result">
+    <part name="parameters" element="tns:ReadMultiple_Result" />
+  </message>
+  <message name="IsUpdated">
+    <part name="parameters" element="tns:IsUpdated" />
+  </message>
+  <message name="IsUpdated_Result">
+    <part name="parameters" element="tns:IsUpdated_Result" />
+  </message>
+  <message name="GetRecIdFromKey">
+    <part name="parameters" element="tns:GetRecIdFromKey" />
+  </message>
+  <message name="GetRecIdFromKey_Result">
+    <part name="parameters" element="tns:GetRecIdFromKey_Result" />
+  </message>
+  <message name="Update">
+    <part name="parameters" element="tns:Update" />
+  </message>
+  <message name="Update_Result">
+    <part name="parameters" element="tns:Update_Result" />
+  </message>
+  <message name="UpdateMultiple">
+    <part name="parameters" element="tns:UpdateMultiple" />
+  </message>
+  <message name="UpdateMultiple_Result">
+    <part name="parameters" element="tns:UpdateMultiple_Result" />
+  </message>
+  <message name="Delete_PVLines">
+    <part name="parameters" element="tns:Delete_PVLines" />
+  </message>
+  <message name="Delete_PVLines_Result">
+    <part name="parameters" element="tns:Delete_PVLines_Result" />
+  </message>
+  <portType name="PaymentVoucherCard_Port">
+    <operation name="Read">
+      <input name="Read" message="tns:Read" />
+      <output name="Read_Result" message="tns:Read_Result" />
+    </operation>
+    <operation name="ReadByRecId">
+      <input name="ReadByRecId" message="tns:ReadByRecId" />
+      <output name="ReadByRecId_Result" message="tns:ReadByRecId_Result" />
+    </operation>
+    <operation name="ReadMultiple">
+      <input name="ReadMultiple" message="tns:ReadMultiple" />
+      <output name="ReadMultiple_Result" message="tns:ReadMultiple_Result" />
+    </operation>
+    <operation name="IsUpdated">
+      <input name="IsUpdated" message="tns:IsUpdated" />
+      <output name="IsUpdated_Result" message="tns:IsUpdated_Result" />
+    </operation>
+    <operation name="GetRecIdFromKey">
+      <input name="GetRecIdFromKey" message="tns:GetRecIdFromKey" />
+      <output name="GetRecIdFromKey_Result" message="tns:GetRecIdFromKey_Result" />
+    </operation>
+    <operation name="Update">
+      <input name="Update" message="tns:Update" />
+      <output name="Update_Result" message="tns:Update_Result" />
+    </operation>
+    <operation name="UpdateMultiple">
+      <input name="UpdateMultiple" message="tns:UpdateMultiple" />
+      <output name="UpdateMultiple_Result" message="tns:UpdateMultiple_Result" />
+    </operation>
+    <operation name="Delete_PVLines">
+      <input name="Delete_PVLines" message="tns:Delete_PVLines" />
+      <output name="Delete_PVLines_Result" message="tns:Delete_PVLines_Result" />
+    </operation>
+  </portType>
+  <binding name="PaymentVoucherCard_Binding" type="tns:PaymentVoucherCard_Port">
+    <binding transport="http://schemas.xmlsoap.org/soap/http" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    <operation name="Read">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/paymentvouchercard:Read" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Read">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Read_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReadByRecId">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/paymentvouchercard:ReadByRecId" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReadByRecId">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReadByRecId_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="ReadMultiple">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/paymentvouchercard:ReadMultiple" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="ReadMultiple">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="ReadMultiple_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="IsUpdated">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/paymentvouchercard:IsUpdated" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="IsUpdated">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="IsUpdated_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="GetRecIdFromKey">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/paymentvouchercard:GetRecIdFromKey" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="GetRecIdFromKey">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="GetRecIdFromKey_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Update">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/paymentvouchercard:Update" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Update">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Update_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="UpdateMultiple">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/paymentvouchercard:UpdateMultiple" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="UpdateMultiple">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="UpdateMultiple_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+    <operation name="Delete_PVLines">
+      <operation soapAction="urn:microsoft-dynamics-schemas/page/paymentvouchercard:Delete_PVLines" style="document" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      <input name="Delete_PVLines">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </input>
+      <output name="Delete_PVLines_Result">
+        <body use="literal" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+      </output>
+    </operation>
+  </binding>
+  <service name="PaymentVoucherCard_Service">
+    <port name="PaymentVoucherCard_Port" binding="tns:PaymentVoucherCard_Binding">
+      <address location="http://nav_app.leadway-pensure.com:8047/LPPFA/WS/PENSURE%20SHAREHOLDERS%20FUNDS/Page/PaymentVoucherCard" xmlns="http://schemas.xmlsoap.org/wsdl/soap/" />
+    </port>
+  </service>
+</definitions>
